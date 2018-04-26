@@ -1,0 +1,53 @@
+<html>
+  <body>
+<form id="myForm">
+<h2>Employee Registration</h2>
+
+<div>
+  <label>Employee Id:
+    <input #empId onfocus="this.value=''">
+  </label>
+</div>
+<div>
+  <label>Employee Name:
+    <input #empName onfocus="this.value=''">
+  </label>
+</div>
+<div>
+  <label>Employee Email:
+    <input #empEmail onfocus="this.value=''">
+  </label>
+</div>
+<div>
+  <label>Employee Password:
+    <input #password type="password" onfocus="this.value=''">
+  </label>
+</div>
+<div>
+  <label>Employee Type:
+    <input #empType onfocus="this.value=''"> 
+  </label>
+</div>
+<div>
+  <label>Employee Qualification:
+    <input #qualification onfocus="this.value=''">
+  </label>
+</div>
+<button (click)="add(empId.value,empName.value,empEmail.value,password.value,
+empType.value,qualification.value);">
+  add
+</button>
+<!-- <button onclick="this.myForm.reset">Reset</button> -->
+</form>
+<!-- <script>
+    function myFunction() {
+        document.getElementById("myForm").reset();
+    }
+    </script> -->
+    <div *ngIf="statusCode; else processing">
+      <div *ngIf="statusCode === 201" [ngClass] = "'success'">
+         Article added successfully.
+      </div>  
+      </div>
+</body>
+</html>

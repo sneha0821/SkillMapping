@@ -1,0 +1,22 @@
+<h1>Update </h1>
+<div *ngIf="employee">
+  <!-- <a routerLink="/edit/{{employee.empId}}"></a> -->
+  <!-- <div> <label>Employee Id: <input type ="text" value="{{employee.empId}}"/></label></div> -->
+  <div>
+    <label>Employee Name:
+      <input [(ngModel)]="employee.empName" placeholder=""/>
+    </label>
+    </div>
+    <div>
+    <label>Employee Email:
+      <input [(ngModel)]="employee.empEmail" placeholder=""/>
+    </label>
+    </div>
+   <!-- <div>
+  <label>Employee Type:
+      <input [(ngModel)]="emplyee.empType" placeholder=""/>
+    </label> 
+  </div> -->
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

@@ -1,0 +1,105 @@
+<html>
+<head>
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+    <!-- <!-- <div>
+        <!-- <form [formGroup]="employeeForm">
+         <table>
+           <tr><td>Enter Employee Name</td><td><input formControlName="empName">
+           <label *ngIf="employeeForm.get('empName')">Name is required. </label>
+           </td></tr>
+           <tr><td>Enter EmployeeEmail</td><td><input formControlName="empEmail">
+            <label *ngIf="employeeForm.get('empEmail')">Name is required. </label>
+            </td></tr>
+            <tr><td>Enter EmployeeType</td><td><input formControlName="empType">
+              <label *ngIf="employeeForm.get('empType')">Name is required. </label>
+              </td></tr>
+           
+           <!-- <tr><td>Enter Employee Email</td><td><input formControlName="category">
+           <label *ngIf="employeeForm.get('category').invalid && processValidation" [ngClass] = "'error'"> Category is required. </label>
+           </td></tr>	
+           <tr><td colspan="2"> 
+         
+              <button type="button" (click)="loadEmployeeToEdit(employee.empId)">Edit</button> 
+  
+    
+        </table>
+         
+        </form> 
+       
+        
+      </div> -->
+<div class="container">
+  <div class="row">
+    <table style="width:100%" id="customers">
+  
+      <th>EmloyeeId</th>
+      <th>EmployeeName</th> 
+      <th>Employee email</th>
+      <th>Employee Type</th>
+      <th>Employee Qualification</th>
+      <th>Edit</th>
+      <th>Delete</th>
+        
+          
+<!--          
+            <tr class="employees"> -->
+              <tr *ngFor="let employee of employees">
+    
+                <td>{{employee.empId}}</td>
+                <td>{{employee.empName}}</td>
+                <td>{{employee.empEmail}}</td>
+                <td>{{employee.empType}}</td>
+                <td>{{employee.qualification}}</td>
+                
+     <!-- <td> 
+        <a class='btn btn-info btn-xs'  routerLink="/edit/{{employee.empId}}"><span class="glyphicon glyphicon-edit"></span> Edit</a></td> -->
+ 
+                <td><button class="edit" routerLink="/edit/{{employee.empId}}">Edit</button></td>
+                <td><button class="delete" title="delete employee"
+                  (click)="delete(employee)">Delete</button></td>
+              </tr>
+          <!-- </tr> -->
+          
+
+            </table>
+                  <!-- <li *ngFor="let employee of employees">
+                    
+                      <span class="badge">{{employee.empId}}</span>
+                    
+                      <span class="badge">{{employee.empName}}</span>
+                      <span class="badge">{{employee.empEmailId}}</span>
+                      <span class="badge">{{employee.empPassword}}</span>
+                      <span class="badge">{{employee.role}}</span>
+                  
+                  </li>
+                 </ul> -->
+      
+  </div>
+</div>
+</body>
+</html>
